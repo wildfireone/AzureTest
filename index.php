@@ -12,13 +12,13 @@
                     var tweets = JSON.parse(xhttp.responseText);
                     var tweetstring = "";
                     var tweet;
-                    for (tweet in tweets[0])
+                    for (tweet in tweets.statuses)
                     {
                         tweetstring = tweetstring + "<h3>" + tweet.user.name + "</h3> </br>";
                         tweetstring = tweetstring + "<p>"  + tweet.text + "</p>"
                     }
 
-                    document.getElementById("twitter").innerHTML = tweets.statuses[0].toString();
+                    document.getElementById("twitter").innerHTML = tweetstring;
                 }
             };
             xhttp.open("GET", "http://nodetestrgu.azurewebsites.net/", true);
