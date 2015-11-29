@@ -14,9 +14,8 @@
                     var tweet;
                     for (var i =0; i< tweets.statuses.length ; i++)
                     {
-                        tweetstring = tweetstring + tweets.statuses[i].text;
-                        //tweetstring = tweetstring + "<h3>" + tweets.user.name + "</h3> </br>";
-                        //tweetstring = tweetstring + "<p>"  + tweet.text + "</p>"
+                        tweetstring = tweetstring + "<h3>" + tweets.statuses[i].user.name + "</h3> </br>";
+                        tweetstring = tweetstring + "<p>"  + tweets.statuses[i].text + "</p>"
                     }
 
                     document.getElementById("twitter").innerHTML = tweetstring;
