@@ -9,9 +9,7 @@
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
 
-                    var tweetArray = new JSONObject(xhttp.responseText);
-                    var tweets = (JSONArray)tweetArray.get("statuses");
-
+                    var tweets = JSON.parse(xhttp.responseText);
                     var tweetstring = "";
                     var tweet;
                     for (tweet in tweets)
