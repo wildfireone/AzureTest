@@ -18,7 +18,7 @@
                         tweetstring = tweetstring + "<p>"  + tweet.text + "</p>"
                     }
 
-                    document.getElementById("twitter").innerHTML = tweetstring;
+                    document.getElementById("twitter").innerHTML = tweets[0];
                 }
             };
             xhttp.open("GET", "http://nodetestrgu.azurewebsites.net/", true);
