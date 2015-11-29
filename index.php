@@ -8,7 +8,18 @@
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    document.getElementById("twitter").innerHTML = xhttp.responseText;
+
+                    JSONObject tweetArray = new JSONObject(xhttp.responseText);
+                    JSONArray tweets = (JSONArray)tweetArray.get("statuses");
+
+                    var tweetstring = "";
+                    for (tweet in tweets)
+                    {
+                        tweetstring = tweetstring + "<h3>" + tweet.user.name + "</h3> </br>";
+                        tweetstring = tweetstring + "<p>"  + tweet.text + "</p>"
+                    }
+
+                    document.getElementById("twitter").innerHTML = tweetstring;
                 }
             };
             xhttp.open("GET", "http://nodetestrgu.azurewebsites.net/", true);
