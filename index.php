@@ -12,7 +12,7 @@
                     var tweets = JSON.parse(xhttp.responseText);
                     var tweetstring = "";
                     var tweet;
-                    for (tweet in tweets)
+                    for (tweet in tweets[0])
                     {
                         tweetstring = tweetstring + "<h3>" + tweet.user.name + "</h3> </br>";
                         tweetstring = tweetstring + "<p>"  + tweet.text + "</p>"
