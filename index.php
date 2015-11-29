@@ -18,8 +18,15 @@
     </script>
 </head>
 <body>
-<div id="twitter" >
+<header>
+    <h1>Header Div</h1>
+</header>
+<main>
+    <h2> Main content </h2>
+</main>
+<aside id="twitter" >
 
-</div>
+</aside>
+
 </body>
 </html>
