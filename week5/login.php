@@ -29,7 +29,6 @@ $error = ""; //Variable for storing our errors.
 //Check username and password from database
         $sql="SELECT uid FROM users WHERE username='".$username."' and password='".$password."'";
         $result=mysqli_query($db,$sql);
-        $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 //If username and password exist in our database then accept the user and login.
 //Otherwise echo error.
