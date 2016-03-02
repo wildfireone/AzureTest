@@ -1,6 +1,3 @@
-<?php
-    //include('login.php'); // Include Login Script
-?>
 
 <!doctype html>
 <html>
