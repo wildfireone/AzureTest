@@ -32,6 +32,7 @@ $error = ""; //Variable for storing our errors.
         if(mysqli_num_rows($result) == 1)
         {
             header("Location: home.php"); // Redirecting To another Page
+            echo "here";
         }else
         {
             $error = "Incorrect username or password.";
