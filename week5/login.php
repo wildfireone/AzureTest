@@ -3,7 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include("connection.php"); //Establishing connection with our database
+if (mysqli_connect_errno())
+{
 
+    echo "MySQLi Connection was not established: " . mysqli_connect_error();
+
+}
 $error = ""; //Variable for storing our errors.
 
 
