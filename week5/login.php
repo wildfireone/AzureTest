@@ -8,8 +8,10 @@ $error = ""; //Variable for storing our errors.
 echo "here";
 if(isset($_POST["submit"]))
 {
+    echo "submitted";
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
+        echo"empty";
         $error = "Both fields are required.";
     }else
     {
