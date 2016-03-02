@@ -7,8 +7,9 @@ include("connection.php"); //Establishing connection with our database
 $error = ""; //Variable for storing our errors.
 echo "here";
 
-if(isset($_POST["submit"]))
-{
+//if(isset($_POST["submit"]))
+//{
+    echo $_POST["username"];
     echo "submitted";
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
@@ -40,6 +41,6 @@ if(isset($_POST["submit"]))
         }
 
     }
-}
+//}
 
 ?>
