@@ -15,14 +15,14 @@
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
-    <form method="POST" action="">
+    <form method="post" action="index.php">
         <label>Username:</label><br>
         <input type="text" name="username" placeholder="username" /><br><br>
         <label>Password:</label><br>
         <input type="password" name="password" placeholder="password" />  <br><br>
         <input type="submit" value="Login" />
     </form>
-    <div class="error"><?php echo $error;?><?php echo $username; echo $password;?></div>
+    <div class="error"><?php //echo $error;?><?php //echo $username; echo $password;?></div>
 
 </div>
 </body>
