@@ -21,9 +21,6 @@ $error = ""; //Variable for storing our errors.
         $username=$_POST['username'];
         $password=$_POST['password'];
 
-// plain text password
-        $password = $password;
-
 //Check username and password from database
         $sql="SELECT uid FROM users WHERE username='$username' and password='$password'";
         $result=mysqli_query($db,$sql);
