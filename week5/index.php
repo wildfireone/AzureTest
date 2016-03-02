@@ -1,5 +1,5 @@
 <?php
-    include('login.php'); // Include Login Script
+    //include('login.php'); // Include Login Script
 ?>
 
 <!doctype html>
@@ -15,12 +15,12 @@
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
-    <form method="post" action="index.php">
+    <form method="post" action="login.php">
         <label>Username:</label><br>
         <input type="text" name="username" placeholder="username" /><br><br>
         <label>Password:</label><br>
         <input type="password" name="password" placeholder="password" />  <br><br>
-        <input type="submit" value="Login" />
+        <input type="submit"/>
     </form>
     <div class="error"><?php //echo $error;?><?php //echo $username; echo $password;?></div>
 
