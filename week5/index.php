@@ -15,7 +15,7 @@
 <div class="loginBox">
     <h3>Login Form</h3>
     <br><br>
-    <form method="post" action="">
+    <form method="POST" action="">
         <label>Username:</label><br>
         <input type="text" name="username" placeholder="username" /><br><br>
         <label>Password:</label><br>
