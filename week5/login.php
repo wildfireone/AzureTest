@@ -9,17 +9,11 @@ if (mysqli_connect_errno())
     echo "MySQLi Connection was not established: " . mysqli_connect_error();
 
 }
-$error = ""; //Variable for storing our errors.
 
-
-//if(isset($_POST["submit"]))
-//{
-    echo $_POST["username"];
-    echo "submitted";
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
-        echo"empty";
-        $error = "Both fields are required.";
+
+        echo "Both fields are required.";
     }else
     {
 // Define $username and $password
@@ -27,7 +21,7 @@ $error = ""; //Variable for storing our errors.
         $password=$_POST['password'];
 
 //Check username and password from database
-        $sql="SELECT uid FROM users WHERE username='".$username."' and password='".$password."'";
+        $sql="SELECT uid FROM users WHERE username='$username' and password='$password'";
         if (!$sql) {
             // There was an error...do something about it here...
             print mysqli_error($db);
@@ -43,10 +37,9 @@ $error = ""; //Variable for storing our errors.
             echo "here";
         }else
         {
-            $error = "Incorrect username or password.";
+            echo "Incorrect username or password.";
         }
 
-   // }
 }
 
 ?>
