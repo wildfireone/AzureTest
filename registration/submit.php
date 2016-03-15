@@ -28,9 +28,7 @@ if(isset($_POST["submit"]))
         {
             $msg = "Thank You! you are now registered.";
         }
-        else{
-            echo "error";
-        }
+
     }
 }
 ?>
