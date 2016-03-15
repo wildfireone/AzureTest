@@ -24,7 +24,7 @@
 			//Check username and password from database
 			$sql="SELECT uid FROM users WHERE username='$username' and password='$password'";
 			$result=mysqli_query($db,$sql);
-			$row=mysqli_fetch_array($result,MYSQLI_ASSOC)The ;
+			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 			
 			//If username and password exist in our database then create a session.
 			//Otherwise echo error.
