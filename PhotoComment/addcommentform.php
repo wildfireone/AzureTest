@@ -1,6 +1,6 @@
 <?php
 include("check.php");
-include("addphoto.php");
+include("addcomment.php");
 ?>
 
 <!doctype html>
