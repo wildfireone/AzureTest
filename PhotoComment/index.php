@@ -3,7 +3,7 @@
 
 	if ((isset($_SESSION['username']) != '')) 
 	{
-		header('Location: photo.php');
+		header('Location: photos.php');
 	}	
 ?>
 
