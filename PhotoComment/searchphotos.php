@@ -1,5 +1,6 @@
 <?php
-	include("check.php");	
+	include("check.php");
+	include("search.php");
 ?>
 
 <!doctype html>
@@ -16,19 +17,15 @@
 
 <div class="searchBox">
 	<form method="post" action="">
-		<label>Username:</label><br>
+		<label>Photos by Username:</label><br>
 		<input type="text" name="username" placeholder="username" /><br><br>
-		<label>Password:</label><br>
-		<input type="password" name="password" placeholder="password" />  <br><br>
-		<input type="submit" name="submit" value="Login" />
+		<input type="submit" name="submit" value="search" />
 	</form>
 	<div class="error"><?php echo $error;?></div>
-	<div class="register">You can register <a href="register.php"> here </a> </div>
 </div>
 
 <div id="photolist">
-
-
+	<?php echo $resultText;?>
 </div>
 
 </body>
