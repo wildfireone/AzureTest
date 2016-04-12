@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
     $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
     if(mysqli_num_rows($result) == 1) {
-        $timestamp = time();
+        //$timestamp = time();
         $target_file = $target_file.$timestamp;
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             $id = $row['userID'];
