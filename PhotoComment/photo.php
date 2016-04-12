@@ -45,13 +45,13 @@
 
             }
             else{
-                echo "<h1>No Photo Selected</h1>";
+                echo "<h1>No Photos Found</h1>";
             }
 
         }
     else{
 
-        echo "<h1>No Photo Selected</h1>";
+        echo "<h1>No User Selected</h1>";
     }
 
     ?>
