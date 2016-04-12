@@ -12,10 +12,11 @@ include("addcomment.php");
 </head>
 
 <body>
+<div class="main">
 <a href="logout.php" style="font-size:18px">Click here to Logout?</a>
 <h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
 
-<div class="photobox">
+<div class="formbox">
     <form method="post" action="">
         <label>Comment:</label><br>
         <textarea name="desc" cols="40" rows="5"  ></textarea><br><br>
@@ -25,5 +26,6 @@ include("addcomment.php");
     </form>
     <div class="msg"><?php echo $msg;?></div>
 </div>
+    </div>
 </body>
 </html>

@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<div align="center">
+<div class="main">
 	<h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">Photo Commenter Registration</h1>
-	<div class="loginBox">
+	<div class="formbox">
 		<h3>Registration Form</h3>
 		<br><br>
 		<form method="post" action="">

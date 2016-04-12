@@ -18,7 +18,6 @@ if(isset($_POST["submit"]))
         //echo $name." ".$email." ".$password;
         $id = $row['userID'];
         $addsql = "INSERT INTO photos (title, description, postDate, url, userID) VALUES ('$title','$desc',now(),'$url','$id')";
-        echo $addsql;
         $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
         if ($query) {
             $msg = "Thank You! photo added. click <a href='photos.php'>here</a> to go back";

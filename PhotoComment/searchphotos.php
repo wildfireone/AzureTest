@@ -12,10 +12,11 @@
 </head>
 
 <body>
+<div class="main">
 <a href="logout.php" style="font-size:18px">Click here to Logout?</a>
 <h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
 
-<div class="searchBox">
+<div class="formbox">
 	<form method="post" action="">
 		<label>Photos by Username:</label><br>
 		<input type="text" name="username" placeholder="username" /><br><br>
@@ -28,5 +29,6 @@
 	<?php echo $resultText;?>
 </div>
 
+	</div>
 </body>
 </html>

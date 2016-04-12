@@ -1,4 +1,4 @@
-.loginBox
+.formbox
 {
 	width:300px;
 	height:380px;
@@ -6,7 +6,7 @@
 	border-radius:10px;	
 	padding: 10px 40px 25px;
 }
-.loginBox h3
+.formbox h3
 {
 	background-color:#63C;
 	color:#FFF;
@@ -19,7 +19,7 @@
 	font-size:24px;
 	font-weight:bold;
 }
-input[type=text],input[type=password],input[type=email]
+input
 {
 	width:280px;
 	padding:10px;
@@ -114,4 +114,7 @@ body
 	background-color:#06F;
 	font-size:20px;
 	color:#FFF;
+}
+.main{
+	align:centre;
 }

@@ -16,9 +16,9 @@
 </head>
 
 <body>
-<div align="center">
+<div class="main">
 <h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">Welcome to Photo Commenter</h1>
-    <div class="loginBox">
+    <div class="formbox">
         <h3>Login Form</h3>
         <br><br>
         <form method="post" action="">
