@@ -12,9 +12,9 @@ include("addcomment.php");
 </head>
 
 <body>
+<h4>Welcome <?php echo $login_user;?> <a href="photos.php" style="font-size:18px">Search</a>||<a href="searchphotos.php" style="font-size:18px">Search</a>||<a href="logout.php" style="font-size:18px">Logout</a></h4>
+
 <div class="main">
-<a href="logout.php" style="font-size:18px">Click here to Logout?</a>
-<h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
 
 <div class="formbox">
     <form method="post" action="">

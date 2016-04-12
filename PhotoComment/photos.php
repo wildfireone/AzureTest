@@ -12,8 +12,8 @@
 </head>
 
 <body>
-<a href="logout.php" style="font-size:18px">Click here to Logout?</a>
-<h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
+
+<h4>Welcome <?php echo $login_user;?> <a href="photos.php" style="font-size:18px">Search</a>||<a href="searchphotos.php" style="font-size:18px">Search</a>||<a href="logout.php" style="font-size:18px">Logout</a></h4>
 
 <div id="photolist">
 	<?php echo $resultText;?>
