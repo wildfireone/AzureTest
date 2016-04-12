@@ -16,7 +16,7 @@
 <div align="center">
 	<h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">Photo Commenter Registration</h1>
 	<div class="loginBox">
-		<h3>Login Form</h3>
+		<h3>Registration Form</h3>
 		<br><br>
 		<form method="post" action="">
 			<label>Username:</label><br>
@@ -28,7 +28,6 @@
 			<input type="submit" name="submit" value="Register!" />
 		</form>
 		<div class="error"><?php echo $error;?></div>
-		<div class="register">You can register <a href="register.php"> here </a> </div>
 	</div>
 </body>
 </html>
