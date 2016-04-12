@@ -25,7 +25,7 @@
                 $photoRow = mysqli_fetch_assoc($photoresult);
                 echo "<h1>".$photoRow['title']."</h1>";
                 echo "<h3>".$photoRow['postDate']."</h3>";
-                echo " <p>".$photoRow['desc']."</p>";
+                echo " <p>".$photoRow['description']."</p>";
 
 
                 $commentSql="SELECT * FROM comments WHERE photoID='$photoID'";
@@ -36,7 +36,7 @@
                     while($commentRow = mysqli_fetch_assoc($commentresult)){
                         echo "<div class = 'comments'>";
                         echo "<h1>".$commentRow['postDate']."</h1>";
-                        echo "<p>".$commentRow['desc']."</p>";
+                        echo "<p>".$commentRow['description']."</p>";
                         echo "</div>";
                     }
 
