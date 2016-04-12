@@ -10,7 +10,7 @@ if(isset($_SESSION['username']))
     if(mysqli_num_rows($result) == 1)
     {
         $searchID = $row['userID'];
-        $searchSql="SELECT title, photoID FROM photos WHERE userID='$searchID'";
+        $searchSql="SELECT title, photoID,url FROM photos WHERE userID='$searchID'";
         $searchresult=mysqli_query($db,$searchSql);
 
         if(mysqli_num_rows($searchresult)>0){
