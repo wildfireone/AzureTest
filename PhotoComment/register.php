@@ -7,9 +7,9 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Registration Form</title>
-<link rel="stylesheet" type="text/css" href="../registration/style.css">
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
