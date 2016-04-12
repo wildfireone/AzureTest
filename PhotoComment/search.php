@@ -6,7 +6,7 @@ if(isset($_POST["submit"]))
 
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
-    $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $row=mysqli_fetch_assoc($result);
     if(mysqli_num_rows($result) == 1)
     {
         $searchID = $row['userID'];
@@ -16,7 +16,7 @@ if(isset($_POST["submit"]))
         if(mysqli_num_rows($searchresult)>0){
             while($searchRow = mysqli_fetch_assoc($searchresult)){
                 $line = "<p><a href='photos.php?id=".$searchRow['photoID']."'>".$searchRow['title']."</a></p>";
-                $resultText += $line;
+                $resultText = $resultText.$line;
             }
         }
         else{
