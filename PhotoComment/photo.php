@@ -21,7 +21,7 @@
             $photoSql="SELECT * FROM photos WHERE photoID='$photoID'";
             $photoresult=mysqli_query($db,$photoSql);
 
-            if(mysqli_num_rows($searchresult)==1){
+            if(mysqli_num_rows($photoresult)==1){
                 $photoRow = mysqli_fetch_assoc($photoresult);
                 echo "<h1>".$photoRow['title']."</h1>";
                 echo "<h3>".$photoRow['postDate']."</h3>";
@@ -33,7 +33,7 @@
                 if(mysqli_num_rows($commentresult)>1) {
 
                     echo "<h2> Comments </h2>";
-                    while($commentRow = mysqli_fetch_assoc($photoresult)){
+                    while($commentRow = mysqli_fetch_assoc($commentresult)){
                         echo "<div class = 'comments'>";
                         echo "<h1>".$commentRow['postDate']."</h1>";
                         echo "<p>".$commentRow['desc']."</p>";
