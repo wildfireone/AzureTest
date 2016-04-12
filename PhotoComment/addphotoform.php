@@ -17,11 +17,13 @@ include("addphoto.php");
 <h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
 
 <div class="formbox">
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <label>Title</label><br>
         <input type="text" name="title" placeholder="title" /><br><br>
         <label>Description:</label><br>
         <textarea name="desc" cols="40" rows="5"  ></textarea><br><br>
+        <label>Image File:</label><br>
+        <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
         <input type="submit" name="submit" value="Submit Photo" />
     </form>
     <div class="msg"><?php echo $msg;?></div>
