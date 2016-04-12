@@ -9,7 +9,7 @@ if(isset($_POST["submit"]))
     $desc = $_POST["desc"];
     $url = "test";
     $name = $_SESSION["username"];
-    $date = date("Y-m-d H:i:s");
+    $date = date('Y-m-d H:i:s');
 
     $sql="SELECT userID FROM users WHERE username='$name'";
     $result=mysqli_query($db,$sql);
@@ -17,7 +17,7 @@ if(isset($_POST["submit"]))
     if(mysqli_num_rows($result) == 1) {
         //echo $name." ".$email." ".$password;
         $id = $row['userID'];
-        $addsql = "INSERT INTO photos (title, desc, postDate, url, userID) VALUES ('$title', '$desc', '$date','$url', '$id')";
+        $addsql = "INSERT INTO photos (title, desc, postDate, url, userID) VALUES ('$title','$desc','$date','$url','$id')";
         echo $addsql;
         $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
         if ($query) {
