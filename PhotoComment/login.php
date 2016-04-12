@@ -14,11 +14,6 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 
-			// To protect from some MySQL injection
-			$username = stripslashes($username);
-			$password = stripslashes($password);
-			$username = mysqli_real_escape_string($db, $username);
-			$password = mysqli_real_escape_string($db, $password);
 			$password = md5($password);
 			
 			//Check username and password from database

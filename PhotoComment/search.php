@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
             }
         }
         else{
-            $resultText = "no photos by you!";
+            $resultText = "no photos by user";
         }
     }
     else
