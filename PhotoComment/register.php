@@ -13,6 +13,9 @@
 </head>
 
 <body>
+<div align="center">
+	<h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">Photo Commenter Registration</h1>
+	<div class="loginBox">
 	<form method="post" action="">
 		<fieldset>
 		<legend>Registration Form</legend>
@@ -59,5 +62,7 @@
 			</table>
 		</fieldset>
 	</form>
+		</div>
+	</div>
 </body>
 </html>
