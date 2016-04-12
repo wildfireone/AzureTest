@@ -12,8 +12,6 @@
 
 <body>
 <a href="logout.php" style="font-size:18px">Click here to Logout?</a>
-<h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
-
 <div id="photo">
     <?php
         if(isset($_GET['id'])){
@@ -24,6 +22,7 @@
                 $photoRow = mysqli_fetch_assoc($photoresult);
                 echo "<h1>".$photoRow['title']."</h1>";
                 echo "<h3>".$photoRow['postDate']."</h3>";
+                echo "<img src='".$photoRow['url']."'/>";
                 echo " <p>".$photoRow['description']."</p>";
 
 
@@ -34,7 +33,7 @@
                     echo "<h2> Comments </h2>";
                     while($commentRow = mysqli_fetch_assoc($commentresult)){
                         echo "<div class = 'comments'>";
-                        echo "<h1>".$commentRow['postDate']."</h1>";
+                        echo "<h3>".$commentRow['postDate']."</h3>";
                         echo "<p>".$commentRow['description']."</p>";
                         echo "</div>";
                     }
