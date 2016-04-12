@@ -40,7 +40,7 @@
                     }
 
                 }
-                echo "<a href='addcomment.php?id=".$photoID."'> Add Comment</a>";
+                echo "<a href='addcommentform.php?id=".$photoID."'> Add Comment</a>";
 
             }
             else{
