@@ -20,7 +20,7 @@
             $photoID = $GET_['id'];
             $photoSql="SELECT * FROM photos WHERE photoID='$photoID'";
             $photoresult=mysqli_query($db,$photoSql) or die(mysqli_error($db));
-
+var_dunp($photoresult);
             if(mysqli_num_rows($photoresult)==1){
                 $photoRow = mysqli_fetch_assoc($photoresult);
                 echo "<h1>".$photoRow['title']."</h1>";
