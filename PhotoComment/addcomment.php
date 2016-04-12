@@ -16,7 +16,7 @@ if(isset($_POST["submit"]))
     if(mysqli_num_rows($result) == 1) {
         //echo $name." ".$email." ".$password;
         $id = $row['userID'];
-        $addsql = "INSERT INTO comments (description, postDate,userID,photoID) VALUES ('$desc',now(),'$photoID',$id')";
+        $addsql = "INSERT INTO comments (description, postDate,userID,photoID) VALUES ('$desc',now(),'$photoID','$id')";
         echo $addsql;
         $query = mysqli_query($db, $addsql) or die(mysqli_error($db));
         if ($query) {
