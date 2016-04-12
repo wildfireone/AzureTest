@@ -16,53 +16,19 @@
 <div align="center">
 	<h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">Photo Commenter Registration</h1>
 	<div class="loginBox">
-	<form method="post" action="">
-		<fieldset>
-		<legend>Registration Form</legend>
-			<table width="400" border="0" cellpadding="10" cellspacing="10">
-				<tr>
-					<td colspan="2" align="center" class="error"><?php echo $msg;?></td>
-				</tr>
-				<tr>
-					<td style="font-weight: bold">
-							<div align="right"><label for="name">Username</label></div>
-					</td>
-					<td>
-							<input name="name" type="text" class="input" size="25" required />
-					</td>
-				</tr>
-				<tr>
-					<td style="font-weight: bold">
-							<div align="right">
-									<label for="email">Email</label>
-							</div>
-					</td>
-					<td>
-							<input name="email" type="email" class="input" size="25" required />
-					</td>
-				</tr>
-				<tr>
-					<td height="23" style="font-weight: bold">
-							<div align="right">
-								<label for="password">Password</label>
-							</div>
-					</td>
-					<td>
-							<input name="password" type="password" class="input" size="25" required />
-					</td>
-				</tr>
-				<tr>
-					<td height="23"></td>
-					<td>
-						<div align="right">
-				  		<input type="submit" name="submit" value="Register!" />
-						</div>
-					</td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
-		</div>
+		<h3>Login Form</h3>
+		<br><br>
+		<form method="post" action="">
+			<label>Username:</label><br>
+			<input type="text" name="username" placeholder="username" required/><br><br>
+			<label>Email:</label><br>
+			<input type="email" name="email" placeholder="email" required />  <br><br>
+			<label>Password:</label><br>
+			<input type="password" name="password" placeholder="password" required/>  <br><br>
+			<input type="submit" name="submit" value="Register!" />
+		</form>
+		<div class="error"><?php echo $error;?></div>
+		<div class="register">You can register <a href="register.php"> here </a> </div>
 	</div>
 </body>
 </html>
