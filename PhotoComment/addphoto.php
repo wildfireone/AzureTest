@@ -17,7 +17,7 @@ if(isset($_POST["submit"]))
     if(mysqli_num_rows($result) == 1) {
         //echo $name." ".$email." ".$password;
         $id = $row['userID'];
-        $query = mysqli_query($db, "INSERT INTO photos (title, desc, postDate, url, userID) VALUES ('$title', '$desc', ,'$date','$url', '$id')") or die(mysqli_error($db));
+        $query = mysqli_query($db, "INSERT INTO photos (title, desc, postDate, url, userID) VALUES ('$title', '$desc', '$date','$url', '$id')") or die(mysqli_error($db));
         if ($query) {
             $msg = "Thank You! photo added. click <a href='photos.php'>here</a> to go back";
         }
