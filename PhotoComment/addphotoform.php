@@ -18,10 +18,10 @@ include("addphoto.php");
 <div class="photo box">
     <form method="post" action="">
         <label>Title</label><br>
-        <input type="text" name="titlel" placeholder="title" /><br><br>
+        <input type="text" name="title" placeholder="title" /><br><br>
         <label>Description:</label><br>
         <textarea name="desc" cols="40" rows="5"  ></textarea><br><br>
-        <input type="submit" name="submit" value="Login" />
+        <input type="submit" name="submit" value="Submit Photo" />
     </form>
     <div class="msg"><?php echo $msg;?></div>
 </div>
