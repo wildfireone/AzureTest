@@ -10,17 +10,17 @@ if(isset($_POST["submit"]))
     if(mysqli_num_rows($result) == 1)
     {
         $searchID = $row['userID'];
-        $searchSql="SELECT title,photoID FROM photos WHERE userID='$searchID'";
+        $searchSql="SELECT title, photoID FROM photos WHERE userID='$searchID'";
         $searchresult=mysqli_query($db,$searchSql);
 
         if(mysqli_num_rows($searchresult)>0){
             while($searchRow = mysqli_fetch_assoc($searchresult)){
-                $line = "<p><a href='photos.php?id=".$searchRow['photoID']."'>".$searchRow['title']."</a></p>";
+                $line = "<p><a href='photo.php?id=".$searchRow['photoID']."'>".$searchRow['title']."</a></p>";
                 $resultText = $resultText.$line;
             }
         }
         else{
-            $resultText = "no photos by that user";
+            $resultText = "no photos by you!";
         }
     }
     else
