@@ -14,7 +14,7 @@
 			$username=$_POST['username'];
 			$password=$_POST['password'];
 
-			$password = md5($password);
+
 			
 			//Check username and password from database
 			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
