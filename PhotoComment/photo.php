@@ -16,8 +16,8 @@
 
 <div id="photo">
     <?php
-        if(isset($GET_['id'])){
-            $photoID = $GET_['id'];
+        if(isset($_GET['id'])){
+            $photoID = $_GET['id'];
             $photoSql="SELECT * FROM photos WHERE photoID='$photoID'";
             $photoresult=mysqli_query($db,$photoSql) or die(mysqli_error($db));
             var_dump($photoresult);
