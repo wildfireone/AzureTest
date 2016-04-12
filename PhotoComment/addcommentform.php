@@ -7,7 +7,7 @@ include("addcomment.php");
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Add Photo</title>
+    <title>Add Comment</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 

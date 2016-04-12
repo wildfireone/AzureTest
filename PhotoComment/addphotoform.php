@@ -16,7 +16,7 @@ include("addphoto.php");
 <a href="logout.php" style="font-size:18px">Click here to Logout?</a>
 <h1 class="hello">Hello, <em><?php echo $login_user;?>!</em></h1>
 
-<div class="photobox">
+<div class="formbox">
     <form method="post" action="">
         <label>Title</label><br>
         <input type="text" name="title" placeholder="title" /><br><br>
