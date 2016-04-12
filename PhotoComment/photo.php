@@ -27,7 +27,7 @@
                 echo " <p>".$photoRow['description']."</p>";
 
 
-                $commentSql="SELECT * FROM comments WHERE photoID='$photoID'";
+                $commentSql="SELECT * FROM comments WHERE bugID='$photoID'";
                 $commentresult=mysqli_query($db,$commentSql) or die(mysqli_error($db));
                 if(mysqli_num_rows($commentresult)>1) {
 
