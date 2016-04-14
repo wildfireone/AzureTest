@@ -22,7 +22,7 @@
 			$password = md5($password);
 			
 			//Check username and password from database
-			$sql="SELECT uid FROM users WHERE username='$username' and password='$password'";
+			$sql="SELECT userID FROM users WHERE username='$username' and password='$password'";
 			$result=mysqli_query($db,$sql);
 			$row=mysqli_fetch_array($result,MYSQLI_ASSOC) ;
 			
