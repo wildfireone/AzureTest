@@ -58,7 +58,7 @@ var datastore;
                 var taskTable = datastore.getTable('tasks');
                 //create a json variable with the details and insert it
                 var firstTask = taskTable.insert({
-                    taskname: $('#tasks').val();,
+                    taskname: $('#tasks').val(),
                     created: new Date()
                 });
                 //finally clear the textbox
@@ -76,7 +76,7 @@ var datastore;
                 $('#tasks').append("<li>"+results[i].created+": "+results[i].taskname+"</li>");
               }
               $('#tasks').append("</ul>");
-            }
+            });
         });
       }
     </script>
