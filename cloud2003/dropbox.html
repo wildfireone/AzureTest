@@ -16,7 +16,8 @@ var datastore;
 
     $(function() {
 
-      client = new Dropbox.Client({key: 'zckrnn98shb2ozk'});
+      client = new Dropbox.Client({key: 'YOUR_AP_KEY'});
+        console.log("authenticating")
         //hide the ui elements we can't use yet and show the authenticate button
         $('#taskbox').hide();
         $('#tasks').hide();
@@ -32,6 +33,7 @@ var datastore;
 
         // check if we have a authenticated client
         if (client.isAuthenticated()) {
+            console.log("Showing Interface/UI")
             // Client is authenticated. Display UI.
             $('#taskbox').show();
             $('#tasks').show();
@@ -43,6 +45,7 @@ var datastore;
 
       //function to connect to our data store
       function getDataStore(){
+        console.log("getting datastore from dropbox");
         //get the datastore from the client (ie thie users dropbox)
         var datastoreManager = client.getDatastoreManager();
         //open the datastore
@@ -54,6 +57,7 @@ var datastore;
             //when the user hits enter
             $('#taskbox').keypress(function (e) {
               if (e.keyCode == 13) {
+                console.log("pushing to dropbox datastore");
                 //access or create a table called "tasks"
                 var taskTable = datastore.getTable('tasks');
                 //create a json variable with the details and insert it
@@ -67,6 +71,7 @@ var datastore;
             });
             //refresh the tasks on the screen
             $('#view').click(function (e) {
+              console.log("reading from dropbox datastore");
               var taskTable = datastore.getTable('tasks');
               //query() returns all the data in the table (you can add filter to this)
               var results = taskTable.query();
