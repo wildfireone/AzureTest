@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  </head>
+  <body>
+    <div id='messagesDiv'></div>
+    <script>
+    //simple scritpt to demonstrate pulling particular values from a firebase table
+    //uses firebase example database
+      $(function() {
+          //reference to firebase
+          var ref2 = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog/users");
+          //order by key, aranges the firebase table in the order added
+          //we serch the keys for any equalTo the value we are looking for
+          ref2.orderByKey().equalTo("alanisawesome").on("child_added", function(snapshot) {
+            //if we find something, create a snapshot
+            var user = snapshot.val();
+            //simply log the data we want to the console
+            console.log("Author: " + user.full_name);
+            console.log("Title: " + user.date_of_birth);
+          });
+        });
+    </script>
+  </body>
+</html>
