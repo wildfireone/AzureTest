@@ -14,7 +14,6 @@
 var client;
 var datastore;
 
-
     $(function() {
 
       client = new Dropbox.Client({key: 'zckrnn98shb2ozk'});
@@ -55,7 +54,7 @@ var datastore;
             $('#taskbox').keypress(function (e) {
               if (e.keyCode == 13) {
                 //access or create a table called "tasks"
-                var taskTable = datastore.getTable('tasks');
+               var taskTable = datastore.getTable('tasks');
                 //create a json variable with the details and insert it
                 var firstTask = taskTable.insert({
                     taskname: $('#tasks').val(),
@@ -67,6 +66,7 @@ var datastore;
             });
             //refresh the tasks on the screen
             $('#view').click(function (e) {
+              var taskTable = datastore.getTable('tasks');
               //query() returns all the data in the table (you can add filter to this)
               var results = taskTable.query();
 
