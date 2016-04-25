@@ -286,13 +286,13 @@ abstract class Proxy {
      * @param string regexp pattern to match against HTTP Origin header
      */
     public static function match_origin( $pattern ){
-        if( empty($_SERVER['HTTP_ORIGIN']) ){
-            self::fatal( 400 , 'Empty origin' );
-        }
-        if( ! preg_match( $pattern, $_SERVER['HTTP_ORIGIN'] ) ){
-            self::fatal( 403, 'Illegal origin');
-        }
-        self::$origin = $_SERVER['HTTP_ORIGIN'];
+        //if( empty($_SERVER['HTTP_ORIGIN']) ){
+         //   self::fatal( 400 , 'Empty origin' );
+        //}
+        //if( ! preg_match( $pattern, $_SERVER['HTTP_ORIGIN'] ) ){
+         //   self::fatal( 403, 'Illegal origin');
+        //}
+        //self::$origin = $_SERVER['HTTP_ORIGIN'];
         return true;
     }
 
