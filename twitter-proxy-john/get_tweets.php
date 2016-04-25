@@ -7,8 +7,8 @@ $oauth_access_token = '14812487-6rIZpOfDmMBGFybfd26Cpe86kGw64MLGaZLaimuFN';
 $oauth_access_token_secret = 'efrJVLugBwFeAVnWSx1Cx6Z8N8IJlSB3js7XjW4KUYiuc';
 $consumer_key = 'uXl8060AfB6TtVZOjUPbPqiuU';
 $consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
-//$user_id = '78884300';
-//$screen_name = 'parallax';
+$myuser_id = '14812487';
+$myscreen_name = 'wildfireone';
 $count = 5;
 
 
@@ -29,8 +29,8 @@ $twitter_proxy = new TwitterProxy(
 	$oauth_access_token_secret,		// 'Access token secret' on https://apps.twitter.com
 	$consumer_key,					// 'API key' on https://apps.twitter.com
 	$consumer_secret,				// 'API secret' on https://apps.twitter.com
-	$user_id,						// User id (http://gettwitterid.com/)
-	$screen_name,					// Twitter handle
+	$myuser_id,						// User id (http://gettwitterid.com/)
+	$myscreen_name,					// Twitter handle
 	$count							// The number of tweets to pull out
 );
 
