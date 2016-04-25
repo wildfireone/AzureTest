@@ -302,14 +302,14 @@ abstract class Proxy {
      * Check remote IP address for whitelisting.
      */
     public static function match_remote_addr( $pattern ){
-        $ips[] = $_SERVER['REMOTE_ADDR'];
-        //isset($_SERVER['HTTP_CLIENT_IP']) and $ips[] = $_SERVER['HTTP_CLIENT_IP'];
+    //    $ips[] = $_SERVER['REMOTE_ADDR'];
+     //   //isset($_SERVER['HTTP_CLIENT_IP']) and $ips[] = $_SERVER['HTTP_CLIENT_IP'];
         //isset($_SERVER['HTTP_X_FORWARDED_FOR']) and $ips[] = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        foreach( $ips as $ip ){
-            if( ! preg_match( $pattern, $ip ) ){
-                self::fatal( 403, 'Illegal IP address: '.$ip );
-            }
-        }
+     //   foreach( $ips as $ip ){
+      //      if( ! preg_match( $pattern, $ip ) ){
+        //        self::fatal( 403, 'Illegal IP address: '.$ip );
+         //   }
+        //}
         return true;
     }
 
