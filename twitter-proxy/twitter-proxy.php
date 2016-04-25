@@ -274,7 +274,7 @@ abstract class Proxy {
          //   self::fatal( 400 , 'Empty referrer' );
         //}
         //if( ! preg_match( $pattern, $_SERVER['HTTP_REFERER'] ) ){
-            self::fatal( 403, 'Illegal referrer');
+            //self::fatal( 403, 'Illegal referrer');
         //}
         return true;
     }
