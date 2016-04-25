@@ -105,19 +105,6 @@ abstract class Proxy {
                 self::$filters[] = array( 'Proxy', 'filter_trim_user' );
                 unset($args['trim_user']);
             }
-                    
-            // Fetch from cache if engine specified. Currently only APC supported
-            if( $cache ){
-                $key = self::$cache_prefix;
-                if( self::$cache_shared ){
-                    $key .= '_$shared'; // <- ensure no collision with twitter names
-                }
-                else {
-                    $key .= '_@'.self::$alias;
-                }
-                $key .= '_'.str_replace('/','_',$path).'_'.self::hash_args($args);
-                $data = self::cache_fetch($key) or $data = null;
-            }
 
             if( isset($data) ){
                 header('X-Cache: Proxy HIT' );
@@ -502,10 +489,6 @@ abstract class Proxy {
      */
     private static function get_user( array $args ){
         $args['skip_status'] = true;
-        if( self::$cache_engine ){
-            $key  = self::$cache_prefix.'_$internal_users_show_'.self::hash_args($args);
-            $user = self::cache_fetch($key) or $user = null;
-        }
         if( ! isset($user) ){
             try {
                 $user = self::$client->call( 'users/show', $args );
