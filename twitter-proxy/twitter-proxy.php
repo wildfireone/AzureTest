@@ -270,12 +270,12 @@ abstract class Proxy {
      * @param string regexp pattern to match against HTTP Referer header
      */
     public static function match_referrer( $pattern ){
-        if( empty($_SERVER['HTTP_REFERER']) ){
-            self::fatal( 400 , 'Empty referrer' );
-        }
-        if( ! preg_match( $pattern, $_SERVER['HTTP_REFERER'] ) ){
+        //if( empty($_SERVER['HTTP_REFERER']) ){
+         //   self::fatal( 400 , 'Empty referrer' );
+        //}
+        //if( ! preg_match( $pattern, $_SERVER['HTTP_REFERER'] ) ){
             self::fatal( 403, 'Illegal referrer');
-        }
+        //}
         return true;
     }
 

@@ -16,12 +16,12 @@ Proxy::match_methods('GET,POST' );
 
 // Restrict permitted HTTP Referrers.
 // This is simply designed to prevent others using your proxy from JavaScript. The referrer is easily forged via other means.
-Proxy::match_referrer('!^https?://(?:localhost|mydomain\.com)/!');
+Proxy::match_referrer('!^https?://(?:localhost|azurewebsites\.net)/!');
 
 
 // Restrict permitted HTTP Origin headers.
 // Similar to above, but specifically for Ajax requests.
-Proxy::match_origin('!^https?://(?:localhost|mydomain\.com)!');
+Proxy::match_origin('!^https?://(?:localhost|azurewebsites\.net)!');
 
 
 // Restrict permitted remote IP addresses
