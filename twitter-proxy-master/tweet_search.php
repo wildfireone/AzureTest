@@ -29,10 +29,7 @@ $twitter_proxy = new TwitterProxy(
 	$oauth_access_token,			// 'Access token' on https://apps.twitter.com
 	$oauth_access_token_secret,		// 'Access token secret' on https://apps.twitter.com
 	$consumer_key,					// 'API key' on https://apps.twitter.com
-	$consumer_secret,				// 'API secret' on https://apps.twitter.com
-	$user_id,						// User id (http://gettwitterid.com/)
-	$screen_name,					// Twitter handle
-	$count							// The number of tweets to pull out
+	$consumer_secret		// 'API secret' on https://apps.twitter.com
 );
 
 // Invoke the get method to retrieve results via a cURL request
