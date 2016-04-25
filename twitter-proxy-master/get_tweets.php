@@ -17,14 +17,9 @@ if(isset($_GET['count'])){
 if(isset($_GET['name'])){
 	$screen_name = $_GET['name'];
 }
-if(isset($_GET['id'])){
-	$$user_id = $_GET['id'];
-}
-
 
 $twitter_url = 'statuses/user_timeline.json';
-$twitter_url .= '?user_id=' . $user_id;
-$twitter_url .= '&screen_name=' . $screen_name;
+$twitter_url .= '?screen_name=' . $screen_name;
 $twitter_url .= '&count=' . $count;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
