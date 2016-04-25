@@ -8,6 +8,12 @@ require_once('config.php');
 $lat = '57.1497';
 $long = '-2.0981';
 
+if(isset($_GET['lat'])){
+	$lat = $_GET['lat'];
+}
+if(isset($_GET['lng'])){
+	$long = $_GET['lng'];
+}
 
 $twitter_url = 'trends/closest.json';
 $twitter_url .= '?lat=' . $lat ."&long=" . $long;
