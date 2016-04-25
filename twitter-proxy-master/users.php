@@ -19,7 +19,7 @@ else{
 $twitter_url = 'users/search.json';
 $twitter_url .= '?q=' . $_GET['name'];
 $twitter_url .= '&count=' . $count;
-console.log($twitter_url);
+echo $twitter_url;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
 $twitter_proxy = new TwitterProxy(
