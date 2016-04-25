@@ -9,7 +9,12 @@ $consumer_key = 'uXl8060AfB6TtVZOjUPbPqiuU';
 $consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
 $user_id = '14812487';
 $screen_name = 'wildfireone';
-$count = 5;
+if(isset($_GET['count'])){
+	$count = $_GET['count'];
+}
+else{
+	$count = 5;
+}
 
 $twitter_url = 'users/search.json';
 $twitter_url .= '?q=' . $_GET['screen_name'];
