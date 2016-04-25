@@ -9,17 +9,10 @@ $consumer_key = 'uXl8060AfB6TtVZOjUPbPqiuU';
 $consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
 $user_id = '14812487';
 $screen_name = 'wildfireone';
+$count = 5;
 
-if(isset($_GET['count'])){
-	$count = $_GET['count'];
-}
-else{
-	$count = 5;
-}
-
-$twitter_url = 'statuses/user_timeline.json';
-$twitter_url .= '?user_id=' . $user_id;
-$twitter_url .= '&screen_name=' . $screen_name;
+$twitter_url = 'users/search.json';
+$twitter_url .= '?q=' . $_GET['screen_name'];
 $twitter_url .= '&count=' . $count;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
