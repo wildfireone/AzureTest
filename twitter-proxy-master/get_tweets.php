@@ -7,13 +7,17 @@ $oauth_access_token = '14812487-6rIZpOfDmMBGFybfd26Cpe86kGw64MLGaZLaimuFN';
 $oauth_access_token_secret = 'efrJVLugBwFeAVnWSx1Cx6Z8N8IJlSB3js7XjW4KUYiuc';
 $consumer_key = 'uXl8060AfB6TtVZOjUPbPqiuU';
 $consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
-$user_id = '78884300';
-$screen_name = 'parallax';
+//$user_id = '78884300';
+//$screen_name = 'parallax';
 $count = 5;
 
-$twitter_url = 'statuses/user_timeline.json';
-$twitter_url .= '?user_id=' . $user_id;
-$twitter_url .= '&screen_name=' . $screen_name;
+if(isset(GET_['screen_name'])){
+	$twitter_url .= '?screen_name=' . $screen_name;
+}
+
+//$twitter_url = 'statuses/user_timeline.json';
+//$twitter_url .= '?user_id=' . $user_id;
+//$twitter_url .= '&screen_name=' . $screen_name;
 $twitter_url .= '&count=' . $count;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
