@@ -12,8 +12,7 @@ $screen_name = 'wildfireone';
 $count = 5;
 
 $twitter_url = 'statuses/user_timeline.json';
-$twitter_url .= '?user_id=' . $user_id;
-$twitter_url .= '&screen_name=' . $screen_name;
+$twitter_url .= '&screen_name=' . javascript;
 $twitter_url .= '&count=' . $count;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
