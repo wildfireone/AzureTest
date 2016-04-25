@@ -44,7 +44,7 @@ Proxy::init_client( 'uXl8060AfB6TtVZOjUPbPqiuU', 'qWYtc0c6wskWp9OvP63LcFTxnGexfh
 // See: https://dev.twitter.com/docs/auth/obtaining-access-tokens
 // Obtaining an access token is beyond the scope of this library.
 // You could pull them from a database, or send the user through an OAuth flow, or just hard code them.
-Proxy::auth_client( '14812487-6rIZpOfDmMBGFybfd26Cpe86kGw64MLGaZLaimuFN', '	efrJVLugBwFeAVnWSx1Cx6Z8N8IJlSB3js7XjW4KUYiuc' );
+Proxy::auth_client( '14812487-6rIZpOfDmMBGFybfd26Cpe86kGw64MLGaZLaimuFN', 'efrJVLugBwFeAVnWSx1Cx6Z8N8IJlSB3js7XjW4KUYiuc' );
 
 
 // Lock screen_name and user_id parameters in some API calls.
