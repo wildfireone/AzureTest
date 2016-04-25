@@ -13,7 +13,7 @@ class TwitterProxy {
 	 * The tokens, keys and secrets from the app you created at https://dev.twitter.com/apps
 	 */
 	private $config = [
-		'use_whitelist' => true, // If you want to only allow some requests to use this script.
+		'use_whitelist' => false, // If you want to only allow some requests to use this script.
 		'base_url' => 'https://api.twitter.com/1.1/'
 	];
 	
@@ -31,11 +31,9 @@ class TwitterProxy {
 	 *	@param	string	$screen_name				Twitter handle
 	 *	@param	string	$count						The number of tweets to pull out
 	 */
-	public function __construct($oauth_access_token, $oauth_access_token_secret, $consumer_key, $consumer_secret, $user_id, $screen_name, $count = 5) {
+	public function __construct($oauth_access_token, $oauth_access_token_secret, $consumer_key, $consumer_secret) {
 
-		$this->config = array_merge($this->config, compact('oauth_access_token', 'oauth_access_token_secret', 'consumer_key', 'consumer_secret', 'user_id', 'screen_name', 'count'));
-
-		$this->whitelist['statuses/user_timeline.json?user_id=' . $this->config['user_id'] . '&screen_name=' . $this->config['screen_name'] . '&count=' . $this->config['count']] = true;
+		$this->config = array_merge($this->config, compact('oauth_access_token', 'oauth_access_token_secret', 'consumer_key', 'consumer_secret'));
 	}
 
 	private function buildBaseString($baseURI, $method, $params) {
