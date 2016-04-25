@@ -16,7 +16,7 @@ else{
 	$count = 5;
 }
 if(isset($_GET['name'])){
-	$q = $_GET['count'];
+	$q = $_GET['name'];
 }
 else{
 	$q = 5;
