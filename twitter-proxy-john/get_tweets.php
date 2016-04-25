@@ -15,10 +15,11 @@ $count = 5;
 if(isset($_GET['screen_name'])){
 	$screen_name = $_GET['screen_name'];
 }
+if(isset($_GET['count'])){
+	$count = $_GET['count'];
+}
 
-//$twitter_url = 'statuses/user_timeline.json';
-//$twitter_url .= '?user_id=' . $user_id;
-//$twitter_url .= '&screen_name=' . $screen_name;
+$twitter_url = 'statuses/user_timeline.json';
 $twitter_url .= '?screen_name=' . $screen_name;
 $twitter_url .= '&count=' . $count;
 
