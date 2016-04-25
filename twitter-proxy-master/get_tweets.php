@@ -11,7 +11,8 @@ $consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
 //$screen_name = 'parallax';
 $count = 5;
 
-if(isset(GET_['screen_name'])){
+
+if(isset($_GET['screen_name'])){
 	$twitter_url .= '?screen_name=' . $screen_name;
 }
 
