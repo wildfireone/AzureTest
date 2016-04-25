@@ -15,7 +15,7 @@ if(isset($_GET['search'])){
 }
 
 $twitter_url = 'search/tweets.json';
-$twitter_url .= '?q=' . $search;
+$twitter_url .= '?q=' . $q;
 $twitter_url .= '&count=' . $count;
 
 //geocode format = latitude,longitude,radius (optional)
