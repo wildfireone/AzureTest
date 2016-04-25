@@ -3,26 +3,21 @@
 require_once('twitter_proxy.php');
 require_once('config.php');
 
-// defaults
+// defaults to aberdeen
 
-$user_id = '14812487';
-$screen_name = 'wildfireone';
-$count = 5;
+$lat = '57.1497';
+$long = '-2.0981';
 
-$twitter_url = 'statuses/user_timeline.json';
-$twitter_url .= '?user_id=' . $user_id;
-$twitter_url .= '&screen_name=' . $screen_name;
-$twitter_url .= '&count=' . $count;
+
+$twitter_url = 'trends/closest.json';
+$twitter_url .= '?lat=' . $lat ."&long=" . $long;
 
 // Create a Twitter Proxy object from our twitter_proxy.php class
 $twitter_proxy = new TwitterProxy(
 	$oauth_access_token,			// 'Access token' on https://apps.twitter.com
 	$oauth_access_token_secret,		// 'Access token secret' on https://apps.twitter.com
 	$consumer_key,					// 'API key' on https://apps.twitter.com
-	$consumer_secret,				// 'API secret' on https://apps.twitter.com
-	$user_id,						// User id (http://gettwitterid.com/)
-	$screen_name,					// Twitter handle
-	$count							// The number of tweets to pull out
+	$consumer_secret				// 'API secret' on https://apps.twitter.com	// The number of tweets to pull out
 );
 
 // Invoke the get method to retrieve results via a cURL request
