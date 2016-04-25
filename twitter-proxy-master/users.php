@@ -15,9 +15,15 @@ if(isset($_GET['count'])){
 else{
 	$count = 5;
 }
+if(isset($_GET['name'])){
+	$q = $_GET['count'];
+}
+else{
+	$q = 5;
+}
 
 $twitter_url = 'users/search.json';
-$twitter_url .= '?q=' . $_GET['name'];
+$twitter_url .= '?q=' . $q;
 $twitter_url .= '&count=' . $count;
 echo $twitter_url;
 
@@ -27,8 +33,7 @@ $twitter_proxy = new TwitterProxy(
 	$oauth_access_token_secret,		// 'Access token secret' on https://apps.twitter.com
 	$consumer_key,					// 'API key' on https://apps.twitter.com
 	$consumer_secret,				// 'API secret' on https://apps.twitter.com
-	$user_id,						// User id (http://gettwitterid.com/)
-	$screen_name,					// Twitter handle
+	$q,								// User id (http://gettwitterid.com/)
 	$count							// The number of tweets to pull out
 );
 
