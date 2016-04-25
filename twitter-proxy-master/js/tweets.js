@@ -1,7 +1,7 @@
 $(function(){
 
 	$.ajax({
-		url: 'get_tweets.php',
+		url: 'user_timeline.php',
 		type: 'GET',
 		success: function(response) {
 

@@ -1,12 +1,9 @@
 <?php
 
 require_once('twitter_proxy.php');
+require_once('config.php');
 
-// Twitter OAuth Config options
-$oauth_access_token = '14812487-6rIZpOfDmMBGFybfd26Cpe86kGw64MLGaZLaimuFN';
-$oauth_access_token_secret = 'efrJVLugBwFeAVnWSx1Cx6Z8N8IJlSB3js7XjW4KUYiuc';
-$consumer_key = 'uXl8060AfB6TtVZOjUPbPqiuU';
-$consumer_secret = 'qWYtc0c6wskWp9OvP63LcFTxnGexfhCjLAfN7gKgcwW7zfcSdv';
+// defaults
 $user_id = '14812487';
 $screen_name = 'wildfireone';
 $count = 5;
