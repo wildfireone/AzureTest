@@ -14,6 +14,6 @@ foreach($_GET as $key => $value){
 }
 $parameters = substr($parameters, 1);
 $finalurl = $url."?".$parameters;
-echo $finalurl;
-//$json = file_get_contents($url);
-//echo $json;
+//echo $finalurl;
+$json = file_get_contents($url);
+echo $json;
