@@ -15,5 +15,11 @@ foreach($_GET as $key => $value){
 $parameters = substr($parameters, 1);
 $finalurl = $url."?".$parameters;
 echo $finalurl;
-$json = file_get_contents($url);
-echo $json;
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL, $url);
+$result = curl_exec($ch);
+curl_close($ch);
+echo $result;
