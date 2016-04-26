@@ -6,6 +6,8 @@
  * Time: 20:45
  */
 $url = $_GET['url'];
-echo $_SERVER['QUERY_STRING']
+foreach($_GET as $key => $value){
+    echo $key . " : " . $value . "<br />\r\n";
+}
 //$json = file_get_contents($url);
 //echo $json;
