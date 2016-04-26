@@ -14,8 +14,6 @@ foreach($_GET as $key => $value){
 }
 $parameters = substr($parameters, 1);
 $finalurl = $url."?".$parameters;
-echo $finalurl;
-echo "\n";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
