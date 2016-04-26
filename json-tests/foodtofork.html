@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
 </head>
 <body>
+<section id="content"></section>
 <script>
     $.ajax({
         url: "http://jpi7434.azurewebsites.net/theprox.php?url=http://food2fork.com/api/search",
@@ -13,7 +14,7 @@
         data: {key:"b0d1b2a4b8595ec4facacf8727952889",q:"ham,eggs",callback:"?"},
         dataType: "json",
         success: function (response) {
-            $('body').innerHTML= JSON.stringify(response);
+            $('#content').text(JSON.stringify(response));
         },
         error: function (xhr, status) {
             alert("error");
