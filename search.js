@@ -32,6 +32,8 @@ function search() {
     for(var i=0; i<5; i++){
       var title = videos[i].snippet.title;
       $('#search-container').append("<li>"+title+"</li>");
+      var img = videos[i].snippet.thumbnails.default.url;
+      $('#search-container').append("<img src='"+img+"'/>");
 
     }
     $('#search-container').append("</ul>");
