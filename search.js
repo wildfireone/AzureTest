@@ -23,17 +23,19 @@ function search() {
     part: 'snippet'
   });
 
+//the google api returns something we can execute (basically its a special function)
   request.execute(function(response) {
 
     var htmlstring = "";
+    //find the videos
     var videos = response.result.items;
     console.log(response);
     $('#search-container').append("<ul>");
     for(var i=0; i<5; i++){
       var title = videos[i].snippet.title;
       $('#search-container').append("<li>"+title+"</li>");
-      //var img = videos[i].snippet.thumbnails.default.url;
-      //$('#search-container').append("<img src='"+img+"'/>");
+      var img = videos[i].snippet.thumbnails.default.url;
+      $('#search-container').append("<img src='"+img+"'/>");
     }
     $('#search-container').append("</ul>");
   });
