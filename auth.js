@@ -1,8 +1,18 @@
+/**
+* @Author: John Isaacs <john>
+* @Date:   29-Mar-172017
+* @Filename: auth.js
+* @Last modified by:   john
+* @Last modified time: 31-Mar-172017
+*/
+
+
+
 // The client ID is obtained from the Google Developers Console
 // at https://console.developers.google.com/.
 // If you run this code from a server other than http://localhost,
 // you need to register your own client ID.
-var OAUTH2_CLIENT_ID = ' client id here';
+var OAUTH2_CLIENT_ID = '379538002891-g600n0fnve9fpnhilmn3je818ae9qpj9.apps.googleusercontent.com';
 var OAUTH2_SCOPES = [
   'https://www.googleapis.com/auth/youtube'
 ];
