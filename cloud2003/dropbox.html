@@ -68,16 +68,18 @@ var datastore;
                 var currentData = "";
                 client.readFile("tasks.txt", function(error, data) {
                   if (error) {
-                    return showError(error);  // Something went wrong.
+                    console.log(error);  // Something went wrong.
+                    return;
                   }
                   currentData = data;
                 });
 
                 client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
                   if (error) {
-                    return showError(error);  // Something went wrong.
+                    console.log(error);  // Something went wrong.
+                    return;
                   }
-                    alert("File saved as revision " + stat.versionTag);
+                    console.log("File saved as revision " + stat.versionTag);
                 });
                 //finally clear the textbox
                 $('#taskbox').val('');
@@ -88,7 +90,8 @@ var datastore;
               console.log("reading from dropbox datastore");
               client.readFile("tasks.txt", function(error, data) {
                 if (error) {
-                  return showError(error);  // Something went wrong.
+                  console.log(error);  // Something went wrong.
+                  return;
                 }
 
                 $('tasks').append(data);
