@@ -72,17 +72,16 @@ var datastore;
                     return;
                   }
                   currentData = data;
+                  client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
+                    if (error) {
+                      console.log(error);  // Something went wrong.
+                      return;
+                    }
+                      console.log("File saved as revision " + stat.versionTag);
+                  });
+                  //finally clear the textbox
+                  $('#taskbox').val('');
                 });
-
-                client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
-                  if (error) {
-                    console.log(error);  // Something went wrong.
-                    return;
-                  }
-                    console.log("File saved as revision " + stat.versionTag);
-                });
-                //finally clear the textbox
-                $('#taskbox').val('');
               }
             });
             //refresh the tasks on the screen
