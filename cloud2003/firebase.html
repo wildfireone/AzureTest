@@ -25,23 +25,34 @@
     firebase.initializeApp(config);
     var myDataRef = firebase.database().ref();
 
+    //connect to firebase
+      //if the user hits enter on our textbox
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
+          //create some variables based on the user input
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
           //push this data into the table
           myDataRef.push({name: name, text: text});
+          //clear the message input box
           $('#messageInput').val('');
         }
       });
+
+      //this code runs automatically whe a new item (child) is added to our table
       myDataRef.on('child_added', function(snapshot) {
+        //get the current state of the table (snapshot)
         var message = snapshot.val();
+          //and access the details (same variable names as when we created them)
           displayChatMessage(message.name, message.text);
       });
+
+      //simple method to display the results
       function displayChatMessage(name, text) {
         $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
+
     </script>
   </body>
 </html>
