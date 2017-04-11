@@ -65,7 +65,15 @@ var datastore;
               if (e.keyCode == 13) {
                 console.log("pushing to dropbox datastore");
                 //access or create a table called "tasks"
-                client.writeFile("tasks.txt", $('#taskbox').val() + "\n", function(error, stat) {
+                var currentData = "";
+                client.readFile("tasks.txt", function(error, data) {
+                  if (error) {
+                    return showError(error);  // Something went wrong.
+                  }
+                  currentData = data;
+                });
+
+                client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
                   if (error) {
                     return showError(error);  // Something went wrong.
                   }
@@ -82,8 +90,8 @@ var datastore;
                 if (error) {
                   return showError(error);  // Something went wrong.
                 }
-                alert(data);  // data has the file's contents
-                console.log(data);
+
+                $('tasks').append(data);
               });
 
             });
