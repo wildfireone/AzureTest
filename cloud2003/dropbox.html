@@ -57,23 +57,19 @@ var datastore;
       function getDataStore(){
         console.log("getting datastore from dropbox");
         //get the datastore from the client (ie thie users dropbox)
-        var datastoreManager = client.getDatastoreManager();
-        //open the datastore
-        datastoreManager.openDefaultDatastore(function (error, datastore) {
-          if (error) {
-              alert('Error opening default datastore: ' + error);
-            }
-          else {
+
+
+
             //when the user hits enter
             $('#taskbox').keypress(function (e) {
               if (e.keyCode == 13) {
                 console.log("pushing to dropbox datastore");
                 //access or create a table called "tasks"
-                var taskTable = datastore.getTable('tasks');
-                //create a json variable with the details and insert it
-                var firstTask = taskTable.insert({
-                  taskname: $('#taskbox').val(),
-                  created: new Date()
+                client.writeFile("tasks.txt", $('#taskbox').val() + "\n", function(error, stat) {
+                  if (error) {
+                    return showError(error);  // Something went wrong.
+                  }
+                    alert("File saved as revision " + stat.versionTag);
                 });
                 //finally clear the textbox
                 $('#taskbox').val('');
@@ -82,19 +78,15 @@ var datastore;
             //refresh the tasks on the screen
             $('#view').click(function (e) {
               console.log("reading from dropbox datastore");
-              var taskTable = datastore.getTable('tasks');
-              //query() returns all the data in the table (you can add filter to this)
-              var results = taskTable.query();
+              client.readFile("tasks.txt", function(error, data) {
+                if (error) {
+                  return showError(error);  // Something went wrong.
+                }
+                alert(data);  // data has the file's contents
+                console.log(data);
+              });
 
-              //create an unordered list for every item in the returned results
-              $('#tasks').append("<ul>");
-              for (var i = 0; i < results.length; i++) {
-                $('#tasks').append("<li>" + results[i].get('created') + ": " + results[i].get('taskname') + "</li>");
-              }
-              $('#tasks').append("</ul>");
             });
-          }
-        });
 
       }
     </script>
