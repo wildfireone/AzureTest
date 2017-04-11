@@ -4,6 +4,7 @@
 @Filename: dropbox.html
 @Last modified by:   john
 @Last modified time: 11-Apr-172017
+you must use a HTTPS address for this to work, dropbox enforces this
 -->
 
 
@@ -22,10 +23,7 @@
     <script>
 
 var client;
-var datastore;
-
     $(function() {
-
       client = new Dropbox.Client({key: 'inets6ft9teagsg'});
         console.log("authenticating")
         //hide the ui elements we can't use yet and show the authenticate button
@@ -53,18 +51,12 @@ var datastore;
         }
       });
 
-      //function to connect to our data store
-      function getDataStore(){
-        console.log("getting datastore from dropbox");
-        //get the datastore from the client (ie thie users dropbox)
-
-
-
+    
             //when the user hits enter
             $('#taskbox').keypress(function (e) {
               if (e.keyCode == 13) {
                 console.log("pushing to dropbox datastore");
-                //access or create a table called "tasks"
+                //read the current content of the tasks.txt file
                 var currentData = "";
                 client.readFile("tasks.txt", function(error, data) {
                   if (error) {
@@ -72,6 +64,7 @@ var datastore;
                     return;
                   }
                   currentData = data;
+                  //write the contents of the current file along with the contents of our taskbox
                   client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
                     if (error) {
                       console.log(error);  // Something went wrong.
@@ -84,9 +77,11 @@ var datastore;
                 });
               }
             });
-            //refresh the tasks on the screen
+
+            //refresh the tasks on the screen when the refresh button is pressed
             $('#view').click(function (e) {
               console.log("reading from dropbox datastore");
+              //read the tasks.txt file
               client.readFile("tasks.txt", function(error, data) {
                 if (error) {
                   console.log(error);  // Something went wrong.
@@ -98,7 +93,7 @@ var datastore;
 
             });
 
-      }
+
     </script>
   </body>
 </html>
