@@ -51,7 +51,7 @@ var client;
         }
       });
 
-    
+
             //when the user hits enter
             $('#taskbox').keypress(function (e) {
               if (e.keyCode == 13) {
@@ -65,7 +65,7 @@ var client;
                   }
                   currentData = data;
                   //write the contents of the current file along with the contents of our taskbox
-                  client.writeFile("tasks.txt", currentData + $('#taskbox').val() + "\n", function(error, stat) {
+                  client.writeFile("tasks.txt", currentData + "<p>" + $('#taskbox').val() + "</p>", function(error, stat) {
                     if (error) {
                       console.log(error);  // Something went wrong.
                       return;
