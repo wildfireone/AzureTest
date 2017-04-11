@@ -4,47 +4,66 @@
 @Filename: userstest.html
 @Last modified by:   john
 @Last modified time: 11-Apr-172017
+This file shows you how to create a simple messaging system over firebase - remember you will need to include your firebase url for it to work.
+You should see that this uses a subtable called "users" in your firebase project, don't worry it will be created when you first run the app.
 -->
 
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-      <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
-    </head>
-    <body>
-      <div id='messagesDiv'></div>
-      <input type='text' id='nameInput' placeholder='Name'>
-      <input type='text' id='messageInput' placeholder='Message'>
-      <script>
-      var config = {
-        databaseURL: "https://cm2003new.firebaseio.com"
-      };
-      firebase.initializeApp(config);
-      var usersRef= firebase.database().ref();
+<!DOCTYPE html>
+<html>
 
+<head>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+</head>
+
+<body>
+    <div id='messagesDiv'></div>
+    <button id='search'>Press me and look in the console</button>
+    <script>
+        var config = {
+            databaseURL: "https://<your-firebase-url>"
+        };
+        firebase.initializeApp(config);
+        //initilize app to use the users sub table
+        var usersRef = firebase.database().ref('users');
+
+        //create a new user
         usersRef.child("KingOfQuahog").set({
-          date_of_birth: "July 23, 1966",
-          full_name: "Peter Griffen"
+            date_of_birth: "July 23, 1966",
+            full_name: "Peter Griffen"
         });
+        //create another new user
         usersRef.child("Giggity").set({
-          date_of_birth: "January 15, 1958",
-          full_name: "Glen Quagmire"
+            date_of_birth: "January 15, 1958",
+            full_name: "Glen Quagmire"
         });
 
+        //update a user
         var glentemp = usersRef.child("Giggity");
-        glentemp .update({
+        glentemp.update({
             "nickname": "GiggityGiggityGlen"
         });
 
-        usersRef.orderByKey().
-        equalTo("KingOfQuahog").
-        on("value", function(snapshot) {
-          var user = snapshot.val();
-          console.log("name: " + user.full_name);
-          console.log("dob: " + user.date_of_birth);
+        //do a search on the users table
+        $('#search').click(function() {
+          //order by key
+            usersRef.orderByKey().equalTo("Giggity").on("value", function(snapshot) {
+                //because we could have more than one result we must treat the result as a list
+                snapshot.forEach(function(child) {
+                  //for each result, get the value
+                  var user = child.val();
+                  //and write the details we want to the console
+                  console.log(user);
+                  //then add some details to our HTML
+                  $("#messagesDiv").empty();
+                  $("#messagesDiv").append("name: " + user.full_name);
+                  $("#messagesDiv").append("</br>");
+                  $("#messagesDiv").append("dob: " + user.date_of_birth);
+                });
+            });
         });
 
-      </script>
-    </body>
-  </html>
+    </script>
+</body>
+
+</html>
