@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   </head>
   <body>
@@ -20,11 +20,16 @@
     //simple scritpt to demonstrate pulling particular values from a firebase table
     //uses firebase example database
       $(function() {
-          //reference to firebase
-          var ref2 = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog/users");
+        var config = {
+          databaseURL: "https://docs-examples.firebaseio.com"
+        };
+        firebase.initializeApp(config);
+        //reference to firebase
+        var myDataRef = firebase.database().ref();
+
           //order by key, aranges the firebase table in the order added
           //we serch the keys for any equalTo the value we are looking for
-          ref2.orderByKey().equalTo("alanisawesome").on("child_added", function(snapshot) {
+          myDataRef.orderByKey().equalTo("alanisawesome").on("child_added", function(snapshot) {
             //if we find something, create a snapshot
             var user = snapshot.val();
             //simply log the data we want to the console
